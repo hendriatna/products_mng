@@ -35,7 +35,7 @@ class AppServiceProvider extends ServiceProvider
 
             $routeName = $request->route()?->getName() ?? 'unknown';
 
-            return Limit::perSeconds(5, 1)->by(
+            return Limit::perMinute(12)->by(
                 "{$userId}:{$routeName}"
             );
         });
